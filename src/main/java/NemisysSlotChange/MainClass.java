@@ -6,6 +6,7 @@ import org.itxtech.nemisys.utils.TextFormat;
 import org.itxtech.nemisys.event.EventHandler;
 import org.itxtech.nemisys.event.EventPriority;
 import org.itxtech.nemisys.event.Listener;
+import org.itxtech.nemisys.event.server.QueryRegenerateEvent;
 
 public class MainClass extends PluginBase implements Listener{
 
