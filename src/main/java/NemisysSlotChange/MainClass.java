@@ -1,15 +1,12 @@
 package NemisysSlotChange;
 
-import 
+import org.itxtech.nemisys.plugin.PluginBase;
+import org.itxtech.nemisys.utils.TextFormat;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.LinkedHashMap;
+import org.itxtech.nemisys.event.EventHandler;
+import org.itxtech.nemisys.event.EventPriority;
+import org.itxtech.nemisys.event.Listener;
 
-/**
- * author: MagicDroidX
- * NukkitExamplePlugin Project
- */
 public class MainClass extends PluginBase implements Listener{
 
     @Override
@@ -26,6 +23,9 @@ public class MainClass extends PluginBase implements Listener{
     public void onDisable() {
     }
 
-    
-
+    @EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = false)
+    public void onQueryRegen(QueryRegenerateEvent e){
+        int total = e.getPlayerCount() + 1;
+        e.setMaxPlayerCount(total);
+    }
 }
